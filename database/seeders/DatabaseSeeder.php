@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Skill;
 use App\Models\User;
+use Database\Factories\SkillFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,11 +17,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+
+        $this->call([
+//           SkillSeeder::class,
+        ]);
+
+
         // User::factory(10)->create();
 
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+        Skill::factory(100)->create();
+
     }
 }

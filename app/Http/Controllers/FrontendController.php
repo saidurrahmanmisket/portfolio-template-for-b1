@@ -7,6 +7,7 @@ class FrontendController extends Controller
 {
     public function home()
     {
+
         $skills = Skill::all();
 
         $name = "Saidur";

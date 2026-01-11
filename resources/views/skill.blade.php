@@ -82,8 +82,65 @@
                 </div>
 
             </div>
+
+            <!-- Skills Table (Static) -->
+            <div class="col-12 mt-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="card-title mb-0">Skills List (Static)</h5>
+                            <small class="text-muted">You can make it dynamic later</small>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped align-middle">
+                                <thead>
+                                    <tr>
+                                        <th style="width:60px">#</th>
+                                        <th>Name</th>
+                                        <th>Sub Skills</th>
+                                        <th style="width:90px">Image</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Frontend</td>
+                                        <td>HTML, CSS, JavaScript</td>
+                                        <td><img src="https://via.placeholder.com/60x40?text=FE" alt="Frontend" class="img-fluid rounded"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Backend</td>
+                                        <td>PHP, Laravel, MySQL</td>
+                                        <td><img src="https://via.placeholder.com/60x40?text=BE" alt="Backend" class="img-fluid rounded"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>JavaScript Framework</td>
+                                        <td>Vue.js, React</td>
+                                        <td><img src="https://via.placeholder.com/60x40?text=JS" alt="JavaScript" class="img-fluid rounded"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>DevOps</td>
+                                        <td>Git, Docker</td>
+                                        <td><img src="https://via.placeholder.com/60x40?text=OPS" alt="DevOps" class="img-fluid rounded"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Design</td>
+                                        <td>Figma, Photoshop</td>
+                                        <td><img src="https://via.placeholder.com/60x40?text=UX" alt="Design" class="img-fluid rounded"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
 
-    
+
 @endsection

@@ -2,12 +2,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Skill;
+use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function skill()
     {
+
         return view('skill');
     }
 

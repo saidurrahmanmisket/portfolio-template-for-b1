@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('sub_title')->nullable()->default(null);
             $table->text('description')->nullable()->default(null);
             $table->text('sub_description')->nullable()->default(null);
+            $table->string('image')->nullable()->default(null);
+            $table->string('page_slug', 150)->unique();
+            $table->string('section')->nullable()->default(null);
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

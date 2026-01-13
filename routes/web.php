@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CmsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontendController;
@@ -28,6 +29,19 @@ Route::controller(AdminController::class)->prefix('/admin')->name('admin.')->mid
 
     Route::get('/projects', 'project')->name('projects');
     Route::post('/projects', 'projectStore')->name('projects.store');
-});
+
+    // Route::get('/cms', 'cms')->name('cms.index');
+    // Route::get('/cms/create', 'cmsCreate')->name('cms.create');
+    // Route::get('/cms/{id}/edit', 'cmsEdit')->name('cms.edit');
+    // Route::get('/cms/{id}/show', 'cmsShow')->name('cms.show');
+
+
+    // Route::post('/cms/store', 'cmsStore')->name('cms.store');
+    // Route::post('/cms/update/{id}', 'cmsUpdate')->name('cms.update');
+    // Route::post('/cms/delete/{id}', 'cmsDelete')->name('cms.delete');
+
+    Route::resource('/cms', CmsController::class);
+
+    });
 
 require __DIR__.'/auth.php';

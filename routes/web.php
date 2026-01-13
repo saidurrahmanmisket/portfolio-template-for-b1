@@ -1,16 +1,27 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FrontendController;
 
 // Frontend route start from here ===================================>
 
-Route::get('/', [FrontendController::class, 'home'])->middleware('throttle:1,1');
+Route::get('/', [FrontendController::class, 'home']);
 
-//admin route start from here =====================================>
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::controller(AdminController::class)->prefix('/admin')->name('admin.')->middleware('admin')->group(function () {
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+
+
+Route::controller(AdminController::class)->prefix('/admin')->name('admin.')->middleware('auth')->group(function () {
 
     Route::get('/skills', 'skill')->name('skills');
     Route::post('/skills', 'skillStore')->name('skills.store');
@@ -18,3 +29,5 @@ Route::controller(AdminController::class)->prefix('/admin')->name('admin.')->mid
     Route::get('/projects', 'project')->name('projects');
     Route::post('/projects', 'projectStore')->name('projects.store');
 });
+
+require __DIR__.'/auth.php';
